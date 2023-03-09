@@ -66,14 +66,12 @@ In the platform you are able to chat with other users, create or join public and
 ### Install it using Docker and Docker Compose
 
 <pre>
-git clone git@github.com:SKTPausanias/ft_transcendence.git
 docker-compose up --build
 </pre>
 
 ### Install it locally
 
 <pre>
-git clone git@github.com:SKTPausanias/ft_transcendence.git
 cd backend
 npm start
 cd ..
