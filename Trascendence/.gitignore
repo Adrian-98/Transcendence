@@ -1,0 +1,51 @@
+#Backend exluded files
+/backend/*
+!/backend/src
+!/backend/.env
+!/backend/.env_test
+!/backend/package.json
+!/backend/tsconfig.*
+!/backend/Dockerfile
+!/backend/ip_config.sh
+#Frontend exluded files
+/frontend/*
+!/frontend/src
+!/frontend/angular.json
+!/frontend/package.json
+!/frontend/tsconfig.*
+!/frontend/Dockerfile
+!/frontend/ip_config.sh
+
+sendgrid.env
+
+.DS_Store
+
+#Backend exluded files
+/ft_transcendence-v2/backend/*
+#Frontend exluded files
+/ft_transcendence-v2/frontend/*
+sendgrid.env
+#Old
+/old/backend/*
+!/old/backend/src
+!/old/backend/*.json
+
+/old/frontend/node_modules
+!/old/frontend/*.json
+
+
+
+#Backend exluded files
+/testingChat/backend/*
+!/testingChat/backend/src
+!/testingChat/backend/.env
+!/testingChat/backend/.env_test
+!/testingChat/backend/package.json
+!/testingChat/backend/tsconfig.*
+#Frontend exluded files
+/testingChat/frontend/*
+!/testingChat/frontend/src
+!/testingChat/frontend/angular.json
+!/testingChat/frontend/package.json
+!/testingChat/frontend/tsconfig.*
+

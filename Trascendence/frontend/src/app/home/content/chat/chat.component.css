@@ -1,0 +1,166 @@
+.left-container{
+	padding-top: 10px;
+	/* background-color: #272727; */
+	background-color: #34425C;
+	color: #a4f6ff;
+}
+.right-container{
+	margin: 0;
+	padding: 0;
+	background-color: #92a1c0;
+	color: #1b222e;
+	
+}
+
+.right-container>div{
+	width: 100%;
+	height: 100vh;
+	text-align: center;
+	line-height: 100vh;
+}
+.child{
+	padding-top: 1vh;
+	padding-bottom: 1vh;
+}
+.scrool{
+	overflow-y: scroll;
+	max-height: 100vh;
+	height: 100vh;
+	
+}
+.scrool::-webkit-scrollbar {
+	width: 20px;
+
+}
+.scrool::-webkit-scrollbar-thumb {
+	border: 8px solid rgba(0, 0, 0, 0);
+	background-clip: padding-box;
+	border-radius: 9999px;
+	background-color: #7b89a7;
+}
+  
+.room-ctn{
+	color: #ECEAE4;
+}
+.room-ctn>p{
+	display: inline-block;
+	margin: 0;
+}
+
+.fa-btn{
+	background: none;
+	border: none;
+}
+.fa-btn>p{
+	display: inline;
+	color: #ECEAE4;
+	margin-left: 8px;
+}
+.fa-btn:hover{
+	background-color: #8695b9;
+	color: #34425C;
+	border-radius: 5px;
+}
+.fa-icon{
+	color: #ECEAE4;
+}
+.item{ 
+	display: flex;
+	align-items: center;
+	justify-content: left;
+	padding-left: 15px;
+	border-radius: 5px;
+	font-size: 15px;
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	padding: 4px;
+	margin: 0;
+}
+.item:hover{
+	cursor: pointer;
+	background-color: #ffffff27;
+	color: #ffffff;
+}
+
+.selected-item{
+	background-color: #ffffff17;
+	color: #ffffff;
+}
+
+img{
+	border:1.5px solid #f5f6fa;
+}
+
+.room_img{
+	position:relative;
+}
+.online::before{
+	content: "";
+	position:absolute;
+	bottom: -2px;
+	right: 2px;
+	height:12px;
+	width: 12px;
+	border-radius: 50%;
+	background:rgb(13, 153, 24);
+	border: 1px solid #ffffff;
+}
+.offline::before{
+	content: "";
+	position:absolute;
+	bottom: -2px;
+	right: 2px;
+	height:12px;
+	width: 12px;
+	border-radius: 50%;
+	background:rgb(153, 13, 13);
+	border: 1px solid #ffffff;
+}
+.channel-fa{
+	color: #94f368;
+}
+.channel-text{
+	color: #a4f6ff;
+}
+.cut-text { 
+	text-overflow: ellipsis;
+	overflow: hidden; 
+	white-space: nowrap;
+}
+.lock{
+	color: #a13030;
+}
+
+.item-ctn{
+	position: relative;
+	color: #94f368;
+}
+.item-wht{
+	position: relative;
+	color: #ffffff;
+}
+.unread{
+	position: absolute;
+	top:-3px;
+	right: 2px;
+	border-radius: 50%;
+	font-size: 10px;
+	padding-left: 3px;
+	padding-right: 3px;
+	text-align: center;
+	background-color: #9900ff;
+	color: #ffffff;
+	align-items: center;
+}
+.lock{
+	position: absolute;
+	bottom:2px;
+	left: 0px;
+	border-radius: 50%;
+	text-align: center;
+	color: #db2100;
+	align-items: center;
+	font-size: 12px;
+}
+.bd-none{
+	border: none;
+}

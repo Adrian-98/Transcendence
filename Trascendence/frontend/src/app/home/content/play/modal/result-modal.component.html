@@ -1,0 +1,12 @@
+<div class="bg-img"></div>
+<div class="profile-ctn">
+	<div class="d-flex justify-content-end" (click)="close()">
+			<span class="fa fa-times" id="close"></span>
+	</div>
+	<div class="text-center mt-2">
+		<h3 class="py-2" [ngClass]="{'wins' : message == 'Victory!', 'loses' : message != 'Victory!'}">{{message}}</h3>
+		<img src="{{user.avatar}}" class="img-fluid ico_l mt-3" alt="">
+		<i><h4 class="text-light">{{user.nickname}}</h4></i>
+	</div>
+</div>
+	

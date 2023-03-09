@@ -1,0 +1,106 @@
+<div class="fill">
+	<div class="row mx-0">
+		<div class="col-3 left-container scrool">
+			<div class="child border-bottom border-light  mb-2">
+				<div class="room-ctn">
+					<button class="fa-btn" (click)="hideShowChannels()">
+						<span class="fa fa-icon" [ngClass]="{'fa-caret-down' : showChannels, 'fa-caret-right' : !showChannels}"></span>
+					</button>
+					<p>Channels</p>	
+					<div *ngIf="showChannels" class="room-ctn ms-2">
+						<div class="room-ctn">
+							<button class="fa-btn" (click)="hideShowPublicChannels()">
+								<span class="fa fa-icon" [ngClass]="{'fa-caret-down' : showPublicChannels, 'fa-caret-right' : !showPublicChannels}"></span>
+							</button>
+							<p>Public</p>
+							<div class="room-ctn">
+								<div *ngIf="showPublicChannels">
+									<div class="item" *ngFor="let room of publicRooms" [ngClass]="{'selected-item' : isSelected(room)}">
+										<!---->
+										<!--Para: no más control-Z-->
+										<div class="item-ctn" (click)="selectChatRoom(room)">
+											<img class="ico_xs p-1 img-fluid me-1 bd-none" src="/assets/img/ico/public.png" alt="image">
+											<div *ngIf="room.unreadMsg > 0" class="unread">
+												{{room.unreadMsg}}
+											</div>
+											<div class="lock d-flex justify-content-start">
+												<i *ngIf='room.protected' class="fa fa-lock lock"></i>
+											</div>
+										</div>
+										<div class="col-9 pl-0" (click)="selectChatRoom(room)">
+											<span class="item-wht cut-text">{{room.name}}</span>
+										</div>
+										<div class="col-1 d-flex justify-content-end" data-mdb-toggle="tooltip" title="Leave Chat">
+											<span class="fas fa-trash-alt fa-lg icon-btn" (click)="leaveChat(room)"></span>
+										</div>
+										<!---->
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="room-ctn">
+							<button class="fa-btn" (click)="hideShowPrivateChannels()">
+								<span class="fa fa-icon" [ngClass]="{'fa-caret-down' : showPrivateChannels, 'fa-caret-right' : !showPrivateChannels}"></span>
+							</button>
+							<p>Private</p>
+							<div class="room-ctn">
+								<div *ngIf="showPrivateChannels">
+									<div class="item" *ngFor="let room of privateRooms" (click)="selectChatRoom(room)" [ngClass]="{'selected-item' : isSelected(room)}">
+										<div class="item-ctn">
+											<img  class="ico_xs p-1 img-fluid me-1 bd-none" src="/assets/img/ico/private.png" alt="image">
+											<div *ngIf="room.unreadMsg > 0" class="unread">
+												{{room.unreadMsg}}
+											</div>
+											<div class="lock">
+												<i *ngIf='room.protected' class="fa fa-lock lock"></i>
+											</div>
+										</div>
+										<span class="cut-text">{{room.name}}</span>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div data-mdb-toggle="tooltip" data-delay='{"show":"500", "hide":"300"}' title="Search chat" class="mt-1">
+							<button class="fa-btn" data-mdb-toggle="tooltip" title="Find and add channels" (click)="openModal('channel')">
+								<span class="fa fa-search-plus fa-icon"></span>
+								<p>LookUp channels</p>
+							</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div>
+				<div class="room-ctn">
+					<button class="fa-btn" (click)="hideShowDM()">
+						<span class="fa fa-icon" [ngClass]="{'fa-caret-down' : showDM, 'fa-caret-right' : !showDM}"></span>
+					</button>
+					<p class="mb-1">Dirrect messages</p>
+				</div>
+				<div *ngIf="showDM">
+					<div class="item ps-2" *ngFor="let room of directRooms" (click)="selectChatRoom(room)" [ngClass]="{'selected-item' : isSelected(room)}">
+						<div class="item-ctn">
+							<img  class="ico_xs img-fluid me-1" src="{{room.img}}" alt="image">
+							<div *ngIf="room.unreadMsg > 0" class="unread">
+								{{room.unreadMsg}}
+							</div>
+						</div>
+						<span class="cut-text">{{room.name}}</span>
+					</div>
+					<div class="mt-1">
+						<button class="fa-btn" data-mdb-toggle="tooltip" title="Find and add people to chat" (click)="openModal('friend')">
+							<span class="fa fa-user-plus fa-icon"> </span>
+							<p>Find people</p>
+						</button>
+					</div>
+				</div>
+				
+			</div>
+		</div>
+		<div class="col-9 right-container">
+			<app-messaging *ngIf="showRoom" [msgPreference]='chatPreference' (closeRoomEvent)='closeRoom()' (addMemberEvent)="addMemberToChat()"></app-messaging>
+			<div *ngIf="!showRoom">
+				<i><small > There is nothing to show. Please select channel or person to start chat.</small></i>			
+			</div>
+		</div>
+	</div>
+	

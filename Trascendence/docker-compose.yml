@@ -1,0 +1,27 @@
+version: "3.3"
+services:
+  db:
+    image: 'postgres:13.4-alpine'
+    container_name: 'postgresnew'
+    environment:
+      - POSTGRES_USER=admin
+      - POSTGRES_PASSWORD=admin
+      - POSTGRES_DB=ft_transcendence
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    ports:
+      - 5432:5432
+  frontend:
+    build: ./frontend
+    environment:
+      - IP=${IP}
+    ports:
+      - 4200:4200
+  backend: 
+    build: ./backend
+    environment:
+      - IP=${IP}
+    ports: 
+      - 3000:3000
+volumes: 
+  pgdata:
